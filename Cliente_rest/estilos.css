@@ -1,0 +1,250 @@
+/* ===== Reset y estilos generales ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: url('hospital.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #1e3a5f;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #1e3a5f;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+h1::before {
+    content: "⚕️ ";
+    margin-right: 10px;
+}
+
+h2 {
+    color: #1e3a5f;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    border-bottom: 3px solid #0ea5e9;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+h3 {
+    color: #2c5282;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #475569;
+    font-size: 1.05em;
+    line-height: 1.6;
+}
+
+span {
+    font-weight: 600;
+    color: #0284c7;
+}
+
+/* ===== Secciones ===== */
+.seccion {
+    display: none;
+}
+
+.activa {
+    display: block;
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(30, 58, 95, 0.08);
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 0.3s ease-in;
+    border: 1px solid #e2e8f0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Formularios ===== */
+input[type="text"],
+input[type="password"],
+input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0 20px 0;
+    border: 2px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: all 0.3s;
+    background-color: #f8fafc;
+}
+
+input:focus {
+    outline: none;
+    border-color: #0ea5e9;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0 20px 0;
+    border: 2px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #f8fafc;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+select:focus {
+    outline: none;
+    border-color: #0ea5e9;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+/* ===== Botones ===== */
+button {
+    background: linear-gradient(to bottom, #0ea5e9, #0284c7);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    margin: 10px 5px;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(14, 165, 233, 0.25);
+    letter-spacing: 0.3px;
+}
+
+button:hover {
+    background: linear-gradient(to bottom, #0284c7, #0369a1);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.35);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(14, 165, 233, 0.25);
+}
+
+/* ===== Tablas ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(30, 58, 95, 0.08);
+    border: 1px solid #e2e8f0;
+}
+
+th {
+    background: linear-gradient(to bottom, #1e3a5f, #2c5282);
+    color: white;
+    padding: 16px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.8px;
+}
+
+td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #475569;
+}
+
+tr:hover {
+    background-color: #f8fafc;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* ===== Estados de reservas ===== */
+.reserva-finalizada {
+    background-color: #f8fafc !important;
+}
+
+.reserva-enuso {
+    background-color: #e0f2fe !important;
+    border-left: 4px solid #0284c7;
+}
+
+.reserva-pasada {
+    background-color: #fee2e2 !important;
+    border-left: 4px solid #dc2626;
+}
+
+.reserva-pendiente {
+    background-color: #d1fae5 !important;
+    border-left: 4px solid #10b981;
+}
+
+/* ===== Contenedores de resultados ===== */
+#resultados,
+#reservas,
+#resenyas {
+    margin-top: 25px;
+    overflow-x: auto;
+    padding: 5px;
+}
+
+/* ===== Etiquetas informativas ===== */
+label {
+    color: #2c5282;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        background: #f8fbfc;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    .activa {
+        padding: 20px;
+    }
+    
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    table {
+        font-size: 0.9em;
+    }
+    
+    th, td {
+        padding: 10px 8px;
+    }
+}
