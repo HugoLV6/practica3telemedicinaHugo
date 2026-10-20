@@ -114,12 +114,13 @@
                 datos: datos
             };
 
-            console.log("Datos enviados:", envio);
+           
 
             rest.post(urlMinisterio, envio, function(estado, respuesta) {
 
                 if (estado >= 200 && estado < 300) {
-                    alert("Reservas enviadas correctamente");
+                alert("Enviadas " + datos.length + " reservas");
+
                     cargarRanking();
                 } else {
                     alert("Error al enviar los datos");
